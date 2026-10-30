@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal portfolio of a Full Stack Developer specializing in MERN stack and AI-powered applications." />
+  <title>Your Name | Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1020;--panel:#111a2e;--panel2:#151f35;--text:#edf2ff;--muted:#a7b2c9;--line:rgba(255,255,255,.1);--accent:#7c9cff;--accent2:#70e1c1;--white:#fff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;background:radial-gradient(circle at 80% 0%,#1b2b50 0,transparent 30%),var(--bg);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:"Space Grotesk";font-weight:700;font-size:1.2rem;letter-spacing:-.04em}
+    .brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:25px;color:var(--muted);font-size:.92rem}
+    .navlinks a:hover,.textlink:hover{color:var(--accent2)}
+    .menu{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:8px 11px;border-radius:9px}
+    section{padding:88px 0;scroll-margin-top:70px}
+    .hero{min-height:calc(90vh - 72px);display:grid;grid-template-columns:1.35fr .65fr;align-items:center;gap:50px;padding-top:70px}
+    .eyebrow{color:var(--accent2);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.75rem}
+    h1,h2,h3{font-family:"Space Grotesk";line-height:1.12;letter-spacing:-.04em}
+    h1{font-size:clamp(2.8rem,6vw,5.2rem);margin:18px 0}
+    h1 span{background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:1.13rem;color:var(--muted);max-width:650px}
+    .actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:11px;font-weight:700;border:1px solid var(--line);transition:.2s}
+    .primary{background:linear-gradient(110deg,var(--accent),#8cafff);color:#091124;border:0}
+    .btn:hover{transform:translateY(-2px)}
+    .hero-card{background:linear-gradient(145deg,rgba(124,156,255,.17),rgba(112,225,193,.07));border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 25px 80px rgba(0,0,0,.25)}
+    .avatar{width:100%;aspect-ratio:1/1;border-radius:18px;background:linear-gradient(135deg,#263d70,#173c45);display:grid;place-items:center;font:700 5rem "Space Grotesk";color:#dce8ff}
+    .hero-card p{color:var(--muted);font-size:.9rem;margin-top:18px}
+    .quick{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+    .quick div{background:rgba(8,14,28,.45);padding:12px;border-radius:12px;font-size:.85rem;color:var(--muted)}
+    .quick strong{display:block;color:var(--text);font-size:1rem}
+    .section-head{margin-bottom:30px}
+    .section-head h2{font-size:clamp(2rem,4vw,3rem);margin:10px 0}
+    .section-head p,.muted{color:var(--muted);max-width:720px}
+    .about-grid,.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+    .card{background:linear-gradient(145deg,rgba(21,31,53,.94),rgba(15,23,40,.94));border:1px solid var(--line);border-radius:18px;padding:25px}
+    .card h3{font-size:1.25rem;margin-bottom:12px}
+    .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+    .chip{font-size:.83rem;color:#dce6ff;background:rgba(124,156,255,.12);border:1px solid rgba(124,156,255,.2);padding:7px 11px;border-radius:999px}
+    .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .skill-card h3{margin-bottom:12px}
+    .skill-card p{color:var(--muted);font-size:.92rem}
+    .timeline{display:grid;gap:14px}
+    .timeline-item{display:grid;grid-template-columns:160px 1fr;gap:20px}
+    .timeline-date{color:var(--accent2);font-weight:700;font-size:.9rem}
+    .timeline-item h3{font-size:1.15rem;margin-bottom:6px}
+    .timeline-item p{color:var(--muted);font-size:.93rem}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+    .project{position:relative;overflow:hidden}
+    .project-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}
+    .project-icon{width:42px;height:42px;border-radius:12px;background:rgba(124,156,255,.15);display:grid;place-items:center;font-size:1.2rem}
+    .project h3{font-size:1.25rem;margin-bottom:10px}
+    .project p{color:var(--muted);font-size:.93rem}
+    .project .chips{margin-top:17px}
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .contact-links{display:grid;gap:12px;margin-top:18px}
+    .contact-links a{padding:12px 14px;border:1px solid var(--line);border-radius:10px;color:var(--muted)}
+    .contact-links a:hover{border-color:var(--accent);color:var(--text)}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.86rem;text-align:center}
+    .note{font-size:.8rem;color:#8390aa;margin-top:18px}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;min-height:auto;padding:70px 0}.hero-card{max-width:420px}.about-grid,.contact-grid{grid-template-columns:1fr}.skill-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:#0e1629;padding:18px 22px;flex-direction:column;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.menu{display:block}.skill-grid,.project-grid,.edu-grid{grid-template-columns:1fr}section{padding:65px 0}.timeline-item{grid-template-columns:1fr;gap:4px}.wrap{width:min(100% - 30px,1100px)}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#home">PORT<span>FOLIO.</span></a>
+    <button class="menu" id="menuBtn" aria-label="Toggle navigation">Menu</button>
+    <div class="navlinks" id="navlinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="wrap hero" id="home">
+    <div>
+      <div class="eyebrow">Full Stack Developer · AI Enthusiast</div>
+      <h1>Building useful<br><span>digital experiences.</span></h1>
+      <p class="lead">I'm a final-year B.Tech Information Technology student focused on developing full-stack web applications and exploring how AI can make software smarter, more helpful, and more accessible.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore my work</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="avatar">YN</div>
+      <p>Currently growing as a developer through hands-on projects, internships, and continuous learning.</p>
+      <div class="quick">
+        <div><strong>2027</strong>Graduation</div>
+        <div><strong>MERN</strong>Full-stack focus</div>
+        <div><strong>AI / GenAI</strong>Areas of interest</div>
+        <div><strong>Trichy</strong>Tamil Nadu, India</div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="wrap" id="about">
+    <div class="section-head"><div class="eyebrow">A little about me</div><h2>Curious by nature.<br>Builder by practice.</h2><p>I enjoy turning ideas into working applications, learning new technologies, and solving practical problems with clean, maintainable code.</p></div>
+    <div class="about-grid">
+      <div class="card">
+        <h3>Professional summary</h3>
+        <p class="muted">Final-year B.Tech Information Technology student (graduating 2027) with hands-on experience in MERN stack development, frontend development, PHP, and AI-focused projects. Comfortable building responsive user interfaces, REST APIs, CRUD-based applications, and integrating AI capabilities into web solutions. Seeking entry-level opportunities and internships in software development, full-stack engineering, and AI-related roles.</p>
+      </div>
+      <div class="card">
+        <h3>What I’m focused on</h3>
+        <p class="muted">Strengthening problem-solving and software engineering fundamentals while building practical products with React, Node.js, Python, and AI APIs.</p>
+        <div class="chips"><span class="chip">Full-stack development</span><span class="chip">AI integration</span><span class="chip">Problem solving</span><span class="chip">Continuous learning</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="skills">
+    <div class="section-head"><div class="eyebrow">My toolkit</div><h2>Technical skills</h2><p>Technologies and tools I have worked with through projects, coursework, and internships.</p></div>
+    <div class="skill-grid">
+      <div class="card skill-card"><h3>Frontend</h3><p>HTML5 · CSS3 · JavaScript (ES6+) · React.js</p></div>
+      <div class="card skill-card"><h3>Backend</h3><p>Node.js · Express.js · Python · PHP · FastAPI</p></div>
+      <div class="card skill-card"><h3>Database</h3><p>MongoDB · CRUD application development</p></div>
+      <div class="card skill-card"><h3>AI & Machine Learning</h3><p>Generative AI · NLP fundamentals · Sentence Transformers · AI API integration</p></div>
+      <div class="card skill-card"><h3>Tools & Platforms</h3><p>GitHub · Netlify · Uvicorn · Swagger UI</p></div>
+      <div class="card skill-card"><h3>Core strengths</h3><p>Problem-solving · Time management · Attention to detail · Team coordination</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="experience">
+    <div class="section-head"><div class="eyebrow">Learning through experience</div><h2>Internship experience</h2><p>Practical exposure across web development and AI-related work.</p></div>
+    <div class="card timeline">
+      <div class="timeline-item"><div class="timeline-date">1 month</div><div><h3>MERN Stack with AI Intern — Innovation Hacks</h3><p>Gained practical exposure to full-stack application development using the MERN stack and AI integration concepts.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">1 month</div><div><h3>PHP Development Intern — Alverz Technology</h3><p>Developed foundational experience in PHP and server-side web development.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">15 days</div><div><h3>Frontend Development Intern — Mind IT</h3><p>Built familiarity with frontend development concepts and responsive user interface implementation.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">15 days</div><div><h3>Artificial Intelligence Intern — Mind IT</h3><p>Explored introductory AI concepts and their practical applications.</p></div></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="projects">
+    <div class="section-head"><div class="eyebrow">Selected work</div><h2>Projects I’ve built</h2><p>A selection of academic and personal projects demonstrating my interest in full-stack engineering and AI-powered applications.</p></div>
+    <div class="project-grid">
+      <article class="card project">
+        <div class="project-top"><div class="project-icon">✦</div><span class="chip">Final-year project</span></div>
+        <h3>Smart Recruitment System with AI Interview Evaluation</h3>
+        <p>An AI-assisted recruitment platform that parses PDF resumes, compares candidate profiles with job descriptions, calculates matching scores, ranks candidates, and generates interview questions.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">NLP</span><span class="chip">Sentence Transformers</span><span class="chip">Groq API</span></div>
+      </article>
+      <article class="card project">
+        <div class="project-top"><div class="project-icon">▣</div><span class="chip">Full stack + AI</span></div>
+        <h3>AI-Powered Resume Builder</h3>
+        <p>A web-based resume builder with a React interface and live resume preview, designed to help users create structured professional resumes.</p>
+        <div class="chips"><span class="chip">MongoDB</span><span class="chip">Express.js</span><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">AI</span></div>
+      </article>
+      <article class="card project">
+        <div class="project-top"><div class="project-icon">◫</div><span class="chip">Full stack + AI</span></div>
+        <h3>Productivity Dashboard</h3>
+        <p>A productivity-focused dashboard built to organize and manage work through a responsive interface and backend services.</p>
+        <div class="chips"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">MongoDB</span><span class="chip">AI</span></div>
+      </article>
+      <article class="card project">
+        <div class="project-top"><div class="project-icon">▤</div><span class="chip">Frontend</span></div>
+        <h3>Netflix Frontend UI</h3>
+        <p>A frontend recreation inspired by streaming-platform layouts, built to practise responsive page structure, styling, and interactive web fundamentals.</p>
+        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" id="education">
+    <div class="section-head"><div class="eyebrow">Academic background</div><h2>Education & certifications</h2></div>
+    <div class="edu-grid">
+      <div class="card"><h3>Bachelor of Technology</h3><p class="muted">Information Technology</p><p class="muted">Final year · Expected graduation: 2027</p><p class="note">Add your college/university name and CGPA here.</p></div>
+      <div class="card"><h3>Certifications & learning</h3><p class="muted">Microsoft Power BI course — ICT Academy</p><p class="note">Add other verified certifications, course links, and completion dates here.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="contact">
+    <div class="section-head"><div class="eyebrow">Let’s connect</div><h2>Have an opportunity or idea?</h2><p>I’m interested in entry-level software development roles and internships, especially in full-stack development and AI-related domains.</p></div>
+    <div class="contact-grid">
+      <div class="card"><h3>Get in touch</h3><p class="muted">Feel free to reach out for opportunities, collaboration, or a conversation about technology.</p><div class="contact-links">
+        <a href="mailto:your.email@example.com">✉ &nbsp; your.email@example.com</a>
+        <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank" rel="noreferrer">↗ &nbsp; LinkedIn profile</a>
+        <a href="https://github.com/your-github" target="_blank" rel="noreferrer">⌘ &nbsp; GitHub profile</a>
+      </div></div>
+      <div class="card"><h3>Open to opportunities</h3><p class="muted">Roles of interest:</p><div class="chips"><span class="chip">Junior Software Engineer</span><span class="chip">MERN Stack Developer</span><span class="chip">Full Stack Developer</span><span class="chip">AI / ML Intern</span><span class="chip">Software Engineering Intern</span></div><p class="note">Replace the sample contact details and profile links before publishing.</p></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> Your Name. Built with care and a passion for technology.</div></footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const menuBtn = document.getElementById("menuBtn");
+  const navlinks = document.getElementById("navlinks");
+  menuBtn.addEventListener("click", () => navlinks.classList.toggle("open"));
+  navlinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => navlinks.classList.remove("open")));
+</script>
+</body>
+</html>
